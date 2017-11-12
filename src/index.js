@@ -8,6 +8,7 @@ mongoose.connect('mongodb://127.0.0.1/'+ process.env.MONGOOSE_DB, {useMongoClien
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 let open = require('amqplib').connect('amqp://'+process.env.RABBIT_USERNAME+':'+process.env.RABBIT_PASSWORD+'@localhost/'+process.env.RABBIT_EXCHANGE);
+
 let q = process.env.RABBIT_QUEUE; 
 
 open.then(function(conn) {
@@ -36,20 +37,3 @@ open.then(function(conn) {
 }).catch((error => {
 	new Logger().error(error.message, null);
 }));
-
-
-
-
-
-
-// let markets = ['wgro', 'lrh', 'elizowka', 'agrohurt'];
-
-
-// markets.forEach(item => {
-// 	new ScraperFactory().init(item).then(response => {
-// 		new MongoDB().insertMany(item, response);
-// 	}).catch(error => {
-// 		new Logger().error(error.message, item);
-// 	})
-// });
-

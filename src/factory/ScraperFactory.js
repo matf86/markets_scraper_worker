@@ -2,6 +2,7 @@ import WgroScraper from '../scrapers/wgro-poznan/WgroScraper';
 import LRHScraper from '../scrapers/zajazdowa-lodz/ZajazdowaScraper';
 import AgrohurtScraper from '../scrapers/agrohurt-rzeszow/AgrohurtScraper';
 import ElizowkaScraper from '../scrapers/elizowka-lublin/ElizowkaScraper';
+import BroniszeScraper from '../scrapers/bronisze-ozarow/BroniszeScraper';
 import Logger from '../logger/logger'; 
 
 export default class ScraperFactory 
@@ -12,7 +13,8 @@ export default class ScraperFactory
 			'wgro': WgroScraper,
 			'lrh': LRHScraper,
 			'elizowka': ElizowkaScraper,
-			'agrohurt': AgrohurtScraper
+			'agrohurt': AgrohurtScraper,
+			'bronisze': BroniszeScraper
 		};
 	}
 

@@ -34,6 +34,8 @@ export default class BroniszeScraper extends Scraper
                 return document.body.innerHTML;    
                 }).end().then(response => {
                     return this.extractOfferData(response)
+                }).catch(error => {
+                    return error;
                 });
 	}
 

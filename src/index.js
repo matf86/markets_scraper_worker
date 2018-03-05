@@ -19,8 +19,6 @@ open.then(function(conn) {
       if (msg !== null) {
         let data = JSON.parse(msg.content);	
 
-        console.log(data);
-
     		data.markets.forEach(item => {
     			new ScraperFactory().init(item).then(response => {
     				new MongoDB().insertMany(item, response);
